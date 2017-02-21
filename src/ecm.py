@@ -100,13 +100,13 @@ class ECM:
         print("upper bound: "+str(ubound))
         while(L):
             N = L.pop()
-            print(N)
             if ECM.is_probable_prime(N,40):
                 if N in result:
                     result[N] += 1
                 else:
                     result[N] = 1
                 continue
+            print("Trying to break "+str(N)+".")
             count = 0
             bound = 1200
             seen = False
@@ -117,8 +117,9 @@ class ECM:
                     bound //= 3
                 if(bound > ubound):
                     bound = ubound
-                print(str(bound)+" ~"+str(100*bound//ubound)+"% of upper bound")
+                print("current bound is "+str(bound)+", ~"+str(100*bound//ubound)+"% of upper bound")
                 if(bound >= ubound and count > 100):
+                    print("Gave up.")
                     if N in result:
                         result[N] += 1
                     else:
@@ -135,5 +136,6 @@ class ECM:
                 N //= d
                 L.append(N)
                 L.append(d)
+                print("It worked!")
                 break
         return result
