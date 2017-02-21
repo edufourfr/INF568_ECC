@@ -105,16 +105,16 @@ class ECM:
                 continue
             print("Trying to break "+str(N)+".")
             count = 0
-            bound = 1200
             digits = math.log(N,10)
-            ubound = int(15 * math.exp(digits/3.9) * (150/digits + 1)) # this gives a decent approximation of the values given by Zimmermann and Dodson
+            ubound = int(math.exp(6.197+(digits/4.499))) # this gives a decent approximation of the values given by Zimmermann and Dodson
+            step = ubound // 40
+            bound = 0
             print("upper bound: "+str(ubound))
             seen = False
             while(True):
                 count += 1
                 if(bound < ubound):
-                    bound *= 5
-                    bound //= 3
+                    bound += step
                 if(bound > ubound):
                     bound = ubound
                 print("current bound is "+str(bound)+", ~"+str(100*bound//ubound)+"% of upper bound")
