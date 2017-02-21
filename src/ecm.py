@@ -95,9 +95,6 @@ class ECM:
             L = []
         else:
             L = [N]
-        digits = math.log(N,10)
-        ubound = int(15 * math.exp(digits/3.9) * (150/digits + 1)) # this gives a decent approximation of the values given by Zimmermann and Dodson
-        print("upper bound: "+str(ubound))
         while(L):
             N = L.pop()
             if ECM.is_probable_prime(N,40):
@@ -109,6 +106,9 @@ class ECM:
             print("Trying to break "+str(N)+".")
             count = 0
             bound = 1200
+            digits = math.log(N,10)
+            ubound = int(15 * math.exp(digits/3.9) * (150/digits + 1)) # this gives a decent approximation of the values given by Zimmermann and Dodson
+            print("upper bound: "+str(ubound))
             seen = False
             while(True):
                 count += 1

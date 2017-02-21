@@ -51,17 +51,16 @@ Time per X25519: 0.011065116004
 ~~~~
 
 ~~~~
+>>> test.fact(30393886518332590346305456575643623)
+Trying to break 109879989044108565385742461.
 upper bound: 80519
-109879989044108565385742461
-2000 ~2% of upper bound
-3333 ~4% of upper bound
-5555 ~6% of upper bound
-9258 ~11% of upper bound
-15430 ~19% of upper bound
-25716 ~31% of upper bound
-1039892934551
-105664713542411
-Factorization of 30393886518332590346305456575643623 in 3.890113 seconds:
+current bound is 2000, ~2% of upper bound
+current bound is 3333, ~4% of upper bound
+current bound is 5555, ~6% of upper bound
+current bound is 9258, ~11% of upper bound
+current bound is 15430, ~19% of upper bound
+It worked!
+Factorization of 30393886518332590346305456575643623 in 3.048571 seconds:
 105664713542411**1
 1039892934551**1
 3323**1
