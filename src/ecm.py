@@ -5,8 +5,12 @@ import math
 from montgomery import ladder
 
 class ECM:
-    with open('../primes/primes.csv','r') as csv:
-        primes = list(map(int, csv.read().split(',')))
+
+    try:
+        with open('../primes/primes.csv','r') as csv:
+            primes = list(map(int, csv.read().split(',')))
+    except:
+        print("primes/primes.csv is not a proper primes file. Generate it with ECM.generate(n), which generates a file with all primes up to n.")
 
     # inspired by "starblue"'s code at http://stackoverflow.com/questions/1042902/most-elegant-way-to-generate-prime-numbers
     def generate(n):
@@ -15,10 +19,10 @@ class ECM:
             if(sieve[i]):
                 for j in range(i*i,n+1,i):
                     sieve[j] = False
-        g = open('primes.csv','w')
-        g.write(','.join([str(p) for p in range(2,n+1) if sieve[p]]))
-        with open('primes.csv','r') as csv:
-            ECM.primes = list(map(int, csv.read().split(',')))
+        g = open('../primes/primes.csv','w')
+        ECM.primes = [p for p in range(2,n+1) if sieve[p]]
+        g.write(','.join([str(p) for p in ECM.primes]))
+        g.close()
 
     def gcd(a,b):
         if(b > a):
@@ -92,7 +96,7 @@ class ECM:
         else:
             L = [N]
         digits = math.log(N,10)
-        ubound = int(15 * math.exp(digits/3.9) * (150/digits + 1)) # this gives a good approximation of the values given by Zimmermann and Dodson
+        ubound = int(15 * math.exp(digits/3.9) * (150/digits + 1)) # this gives a decent approximation of the values given by Zimmermann and Dodson
         print("upper bound: "+str(ubound))
         while(L):
             N = L.pop()
