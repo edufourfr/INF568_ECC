@@ -107,7 +107,7 @@ class ECM:
             count = 0
             digits = math.log(N,10)
             ubound = int(math.exp(6.197+(digits/4.499))) # this gives a decent approximation of the values given by Zimmermann and Dodson
-            step = ubound // 40
+            step = ubound // 70
             bound = 0
             print("upper bound: "+str(ubound))
             seen = False
