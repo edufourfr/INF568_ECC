@@ -5,8 +5,11 @@
 
 * **src** contains the *.py* source files.  
 * **out** contains some the results obtained by running the algorithm on some of the provided integers. These are *.out* files.  
-* **prime** contains *primes.csv*, which is used to store some (relatively small) primes. You can change the upper bound on the primes that are stored by using *ECM.generate*. For instance typing ~~~~
-ECM.generate(500000000) ~~~~ will generate all primes up to 500000000 using a sieve and store them in *primes/primes.csv*.  
+* **prime** contains *primes.csv*, which is used to store some (relatively small) primes. You can change the upper bound on the primes that are stored by using *ECM.generate*. For instance typing  
+~~~~
+ECM.generate(500000000)
+~~~~  
+  will generate all primes up to 500000000 using a sieve and store them in *primes/primes.csv*.  
 
 ## Code structure
 
