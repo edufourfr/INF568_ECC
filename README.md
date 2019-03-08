@@ -9,7 +9,7 @@
 
 ## Code structure
 
-* **point.py** contains a class that is used to represent points on a elliptic curve. Of note is the set function that specifies the parameters (N and A) of the elliptic curve we are currently working on. It also there that are implemented the functions for adding, doubling and normalizing points, as well as the conditional swap.  
+* **point.py** contains a class that is used to represent points on a elliptic curve. Of note is the set function that specifies the parameters (N and A) of the elliptic curve we are currently working on. It is also there that are implemented the functions for adding, doubling and normalizing points, as well as the conditional swap.  
 * **montgomery.py** contains one function which implements the montgomery *ladder*.  
 * **keyexchange.py** implements half of a Diffie Hellman protocol with elliptic curves, as well as several functions that are used to interpret the inputs as specified in [RFC7748](https://tools.ietf.org/html/rfc7748).  
 * **ecm.py** contains the *ECMTrial* and *factorization* functions, which allow us to attempt to factorize integers. *factorization* returns a dictionary mapping (presumably) prime numbers to their power in the factoring of the input.  
